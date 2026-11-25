@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: romashka-portal
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app.py:/app/app.py:ro
+      - ./templates:/app/templates:ro
+    restart: unless-stopped
